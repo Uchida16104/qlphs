@@ -1,0 +1,5 @@
+{
+  "install": "apt-get update && composer clear-cache && composer self-update --2 && composer install && composer require vlucas/phpdotenv && apt-get install -y php-cli php-mysqli php-mysql mysql-server mysql-client && npm install express sqlite3 fs path module commander && curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y && export PATH='$HOME/.cargo/bin:$PATH' && apt-get update && apt-get install gcc",
+  "start": "php -S 0.0.0.0:3000 && service mysql status && mysql_secure_installation && systemctl restart mysql && chown -R www-data:www-data /app && chmod -R 755 /app && service apache2 start && chmod 666 my_database.db"
+}
+ 
